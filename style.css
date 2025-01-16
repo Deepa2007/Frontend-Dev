@@ -1,0 +1,114 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Styling for fixed navbar */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    z-index: 10;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.toggle-menu {
+    display: none;
+}
+
+/* Main container styles */
+.container {
+    display: flex;
+    margin-top: 50px; /* Offset navbar */
+    min-height: 100vh;
+}
+
+.left-menu {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+    transition: all 0.3s ease;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 20px;
+}
+
+.right-panel {
+    width: 250px;
+    background-color: #f4f4f4;
+    padding: 20px;
+}
+
+/* Footer styles */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 992px) {
+    .left-menu {
+        width: 200px;
+    }
+
+    .right-panel {
+        width: 200px;
+    }
+
+    .main-content {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 767px) {
+    .left-menu {
+        width: 150px;
+    }
+
+    .right-panel {
+        width: 150px;
+    }
+
+    .toggle-menu {
+        display: block;
+        background-color: #333;
+        color: white;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+    }
+}
+
+@media (max-width: 600px) {
+    .left-menu, .right-panel {
+        width: 0;
+        display: none;
+    }
+
+    .main-content {
+        width: 100%;
+    }
+}
